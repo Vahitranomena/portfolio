@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Christin | Développeur Java Mobile & Desktop</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <div class="profile-container">
+                <img src="images/profile.jpg" alt="Daniel Christin" class="profile-img">
+            </div>
+            
+            <h1>VAHITRANOMENA Fehizoron'Ny Finoana Daniel Christin</h1>
+            <p class="subtitle">Développeur d'Applications Mobile & Desktop</p>
+            <p class="tagline">Développeur Java spécialisé dans la création d'applications axées sur la gestion, la digitalisation et la sécurisation des données avec une expertise centrée sur JavaFX et Android Studio.</p>
+            
+            <div class="hero-buttons">
+                <a href="#projets" class="btn btn-primary">Voir mes projets</a>
+                <a href="documents/CV_Daniel_Christin.pdf" class="btn btn-secondary" download="CV_Daniel_Christin.pdf">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>Télécharger mon CV
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="about" id="a-propos">
+        <div class="container">
+            <h2>Poste Actuel</h2>
+            <div class="experience-card">
+                <h3>Développeur d'Application & Responsable Digitalisation</h3>
+                <p class="company">Mpamafy Production (FIARAM) | <span>Depuis 2 ans</span></p>
+                <p>En poste pour assurer la transition numérique globale de l'organisation. Conception, développement et déploiement de solutions logicielles sur-mesure pour moderniser et sécuriser la gestion des membres ainsi que les flux financiers.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projets">
+        <div class="container">
+            <h2>Mes Réalisations</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-preview">
+                        <img src="images/screenshots/pastora.jpg" alt="Aperçu PastoraApplication" class="screenshot-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>PastoraApplication</h3>
+                        <p class="project-desc">Système hybride de digitalisation et de gestion administrative des mouvements pastoraux. Synchronisation locale sans dépendance internet entre mobile et PC.</p>
+                        <div class="tags">
+                            <span>Java</span><span>Android Studio</span><span>JavaFX</span><span>FXML</span><span>SQLite</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="confidential-tag">🔒 Logiciel Privé</span>
+                            <a href="#" class="btn-download" onclick="alertPrivateApp('PastoraApplication'); return false;">Télécharger .exe</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-preview">
+                        <img src="images/screenshots/asafa.jpg" alt="Aperçu AsafaAdministration" class="screenshot-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>AsafaAdministration & Asafa-Archive</h3>
+                        <p class="project-desc">Suite écosystème de sécurisation musicale pour Mpamafy Production. AsafaAdministration gère le chiffrement des flux audio côté PC et l'application client décrypte de manière sécurisée.</p>
+                        <div class="tags">
+                            <span>Java (Cipher)</span><span>Android Studio</span><span>JavaFX</span><span>FXML</span><span>Gestion MP3</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="confidential-tag">🔒 Logiciel Privé</span>
+                            <a href="#" class="btn-download" onclick="alertPrivateApp('AsafaAdministration'); return false;">Télécharger .exe</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-preview">
+                        <img src="images/screenshots/baiboly.jpg" alt="Aperçu Baiboly-fihirana-Fiaram" class="screenshot-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>Baiboly-fihirana-Fiaram</h3>
+                        <p class="project-desc">Application mobile grand public regroupant des recueils de cantiques et une version complète de la Bible fonctionnant 100% hors-ligne.</p>
+                        <div class="tags">
+                            <span>Java</span><span>Android Studio</span><span>XML UI</span><span>SQLite</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="confidential-tag">🔒 Application Privée</span>
+                            <a href="#" class="btn-download" onclick="alertPrivateApp('Baiboly-fihirana-Fiaram'); return false;">Télécharger .apk</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-preview">
+                        <img src="images/screenshots/vahiny.jpg" alt="Aperçu VahinyAppGestion" class="screenshot-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>VahinyAppGestion</h3>
+                        <p class="project-desc">Solution logicielle gérant le contrôle d'accès des visiteurs de l'établissement et l'automatisation du pointage des services de restauration.</p>
+                        <div class="tags">
+                            <span>Java</span><span>JavaFX</span><span>FXML</span><span>CSS Layouts</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="confidential-tag">🔒 Logiciel Privé</span>
+                            <a href="#" class="btn-download" onclick="alertPrivateApp('VahinyAppGestion'); return false;">Télécharger .apk</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-preview">
+                        <img src="images/screenshots/mpamafy.jpg" alt="Aperçu MpamafyApp" class="screenshot-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>MpamafyApp</h3>
+                        <p class="project-desc">Logiciel d'administration financière multisite permettant le pointage mensuel décentralisé et sécurisé des employés pour le calcul automatique de la paie.</p>
+                        <div class="tags">
+                            <span>Java</span><span>JavaFX</span><span>FXML</span><span>Algorithme RH</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="confidential-tag">🔒 Logiciel Privé</span>
+                            <a href="#" class="btn-download" onclick="alertPrivateApp('MpamafyApp'); return false;">Télécharger .apk</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-preview">
+                        <img src="images/screenshots/mymesure.jpg" alt="Aperçu MyMesureEnd" class="screenshot-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>MyMesureEnd</h3>
+                        <p class="project-desc">Système connecté IoT combinant matériel microcontrôleur et interface logicielle pour mesurer automatiquement la taille d'une personne avec précision.</p>
+                        <div class="tags">
+                            <span>IoT</span><span>ESP32</span><span>Ultrason (HC-SR04)</span><span>Java Android</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="confidential-tag">🔒 Solution Privée</span>
+                            <a href="#" class="btn-download" onclick="alertPrivateApp('MyMesureEnd'); return false;">Télécharger .apk</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-preview">
+                        <img src="images/screenshots/enoka.jpg" alt="Aperçu Enoka EsteraApplication" class="screenshot-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>Enoka EsteraApplication</h3>
+                        <p class="project-desc">Solution logicielle sur-mesure développée pour l'organisation afin de numériser le registre des membres et assurer le suivi dynamique des mouvements.</p>
+                        <div class="tags">
+                            <span>Java</span><span>JavaFX</span><span>FXML</span><span>Architecture MVC</span><span>SQL</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="confidential-tag">🔒 Logiciel Privé</span>
+                            <a href="#" class="btn-download" onclick="alertPrivateApp('Enoka EsteraApplication'); return false;">Télécharger .exe</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-preview">
+                        <img src="images/screenshots/multigroup.jpg" alt="Aperçu MultiGroup Audio Player" class="screenshot-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>MultiGroup Audio Player</h3>
+                        <p class="project-desc">Suite d'applications musicales distinctes conçues pour structurer, catégoriser et diffuser localement les catalogues de productions spécifiques.</p>
+                        <div class="tags">
+                            <span>Java</span><span>Android Studio</span><span>XML UI</span><span>MediaPlayer API</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="confidential-tag">🔒 Application Privée</span>
+                            <a href="#" class="btn-download" onclick="alertPrivateApp('MultiGroup Audio Player'); return false;">Télécharger .apk</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card status-wip">
+                    <div class="project-preview">
+                        <img src="images/screenshots/taranaki.jpg" alt="Aperçu Taranak'i Levy App" class="screenshot-img">
+                    </div>
+                    <div class="project-content">
+                        <h3>Taranak'i Levy App</h3>
+                        <p class="project-desc">Application mobile d'envergure nationale conçue comme la suite de l'écosystème <em>PastoraApplication</em>, dédiée spécifiquement au recensement, à la cartographie et au suivi du réseau hors-ligne des fils et filles de pasteurs.</p>
+                        <div class="tags">
+                            <span>Java</span><span>Android Studio</span><span>XML</span><span>SQLite (Massive Data)</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="badge-wip">En cours de dev</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Me Contacter</h2>
+            <p>Intéressé par mon profil pour un projet de digitalisation, de sécurisation de données ou une opportunité ? N'hésitez pas à me joindre.</p>
+            <div class="contact-info">
+                <p>📧 Email : <a href="mailto:danielvahitanomena@gmail.com">danielvahitanomena@gmail.com</a></p>
+                <p>📞 Téléphone : <a href="tel:+261341336013">+261 34 13 360 13</a></p>
+                <p>🌐 GitHub Pro : <a href="https://github.com/Vahitranomena" target="_blank">github.com/Vahitranomena</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <span class="footer-logo">Daniel<span>.C</span></span>
+                <p class="footer-tagline">Conception d'applications performantes, sécurisées et 100% optimisées pour la gestion locale.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#a-propos">Poste Actuel</a></li>
+                    <li><a href="#projets">Mes Réalisations</a></li>
+                    <li><a href="#contact">Me Contacter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Daniel Christin. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function alertPrivateApp(appName) {
+            alert(
+                "🔒 " + appName + " | Application Privée et Sécurisée\n\n" +
+                "Ce logiciel a été développé exclusivement pour les infrastructures internes de l'organisation afin de garantir la stricte confidentialité de ses flux et données.\n\n" +
+                "Le code source et les exécutables ne sont pas en libre accès. Pour toute démonstration ou demande d'accès personnelle, veuillez me contacter directement via la section Contact."
+            );
+        }
+    </script>
+</body>
+</html>

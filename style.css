@@ -1,0 +1,571 @@
+/* ==========================================================================
+   1. POLICES & CONFIGURATION GLOBALE
+   ========================================================================== */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/montserrat_regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/montserrat_medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/montserrat_bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    /* Palette de Gris Sombre */
+    --bg-main: #121214;         /* Fond principal gris très sombre */
+    --bg-card: #1e1e22;         /* Fond des cartes gris anthracite */
+    --bg-card-hover: #26262b;   /* Survol des cartes */
+    --bg-input: #2d2d34;        /* Éléments de formulaires ou blocs secondaires */
+    
+    /* Couleurs d'Accents Électriques */
+    --accent-orange: #ff6b00;   /* Orange vif haute visibilité */
+    --accent-orange-hover: #e05e00;
+    --accent-red: #ef4444;      /* Rouge dynamique pour WIP / Alerte */
+    --accent-red-bg: rgba(239, 68, 68, 0.15);
+    
+    /* Dégradé Hero */
+    --primary-gradient: linear-gradient(135deg, #18181b, #2d2d34);
+    
+    /* Typographie Haute Visibilité */
+    --text-title: #ffffff;      /* Blanc pur pour les titres */
+    --text-main: #e4e4e7;       /* Gris très clair pour le texte de lecture */
+    --text-light: #a1a1aa;      /* Gris moyen pour les descriptions secondaires */
+    
+    /* Ombres et Effets */
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: var(--text-main);
+    background-color: var(--bg-main);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-title);
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-orange);
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   2. HERO SECTION
+   ========================================================================== */
+.hero {
+    background: var(--primary-gradient);
+    color: #ffffff;
+    padding: 100px 0 80px 0;
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid #27272a;
+}
+
+.profile-container {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 24px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    transition: var(--transition);
+}
+
+.profile-container:hover {
+    transform: scale(1.05);
+    border-color: var(--accent-orange);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    color: var(--text-title);
+}
+
+.hero .subtitle {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--accent-orange);
+    margin-bottom: 24px;
+}
+
+.hero .tagline {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    color: var(--text-main);
+    font-weight: 400;
+}
+
+/* BOUTONS */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--accent-orange);
+    color: #000000; /* Contraste maximal sur l'orange */
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-orange-hover);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-title);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--accent-orange);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   3. SECTION POSTE ACTUEL
+   ========================================================================== */
+.about {
+    background-color: var(--bg-main);
+}
+
+.experience-card {
+    background-color: var(--bg-card);
+    border-left: 5px solid var(--accent-orange);
+    padding: 32px;
+    border-radius: 0 12px 12px 0;
+    box-shadow: var(--card-shadow);
+}
+
+.experience-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-title);
+    margin-bottom: 8px;
+}
+
+.experience-card .company {
+    font-weight: 500;
+    color: var(--accent-orange);
+    margin-bottom: 16px;
+}
+
+.experience-card .company span {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   4. GRILLE DES PROJETS
+   ========================================================================== */
+.projects {
+    background-color: #161619; /* Alternance de gris sombre */
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 32px;
+}
+
+.project-card {
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+    border: 1px solid #27272a;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    background-color: var(--bg-card-hover);
+    border-color: rgba(255, 107, 0, 0.4); /* Glow orange subtil au survol */
+}
+
+.project-content {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-content h3 {
+    font-size: 1.3rem;
+    color: var(--text-title);
+    margin-bottom: 12px;
+}
+
+.project-desc {
+    color: var(--text-main);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* TAGS (TECHNOLOGIES) */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.tags span {
+    background-color: var(--bg-input);
+    color: var(--accent-orange);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 107, 0, 0.1);
+}
+
+/* LINKS PROJETS */
+.project-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid #27272a;
+}
+
+.btn-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-link:hover {
+    color: var(--accent-orange);
+    text-decoration: underline;
+}
+
+.btn-download {
+    background-color: var(--bg-input);
+    color: var(--text-title);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.btn-download:hover {
+    background-color: var(--accent-orange);
+    color: #000000;
+    border-color: var(--accent-orange);
+}
+
+/* STYLE WORK IN PROGRESS (PROJET EN COURS) */
+.project-card.status-wip {
+    border: 1px dashed var(--accent-red);
+}
+
+.project-card.status-wip:hover {
+    border-color: var(--accent-red);
+    box-shadow: 0 10px 25px rgba(239, 68, 68, 0.15);
+}
+
+.project-card.status-wip h3 {
+    color: #ffffff;
+}
+
+.badge-wip {
+    background-color: var(--accent-red-bg);
+    color: var(--accent-red);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* ==========================================================================
+   5. CONTACT & FOOTER
+   ========================================================================== */
+.contact {
+    background-color: var(--bg-main);
+    border-top: 1px solid #27272a;
+}
+
+.contact h2 {
+    color: var(--text-title);
+}
+
+.contact p {
+    color: var(--text-light);
+    max-width: 600px;
+    margin-bottom: 32px;
+}
+
+.contact-info p {
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+    color: var(--text-title);
+}
+
+.contact-info a {
+    color: var(--accent-orange);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+    color: var(--accent-orange-hover);
+}
+
+footer {
+    background-color: #0b0f19;
+    color: var(--text-light);
+    text-align: center;
+    padding: 24px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #1e293b;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE / MOBILE DESIGN
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ==========================================================================
+   5. STYLE DU FOOTER (DARK THEME PREMIUM)
+   ========================================================================== */
+.site-footer {
+    background-color: #0b0b0d; /* Gris ultra sombre distinct du fond principal */
+    color: var(--text-light);
+    font-size: 0.9rem;
+    border-top: 1px solid #1e1e24;
+    padding-top: 60px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Donne plus de place à la description */
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+/* Colonne Identité */
+.footer-logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-title);
+    display: block;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.footer-logo span {
+    color: var(--accent-orange);
+}
+
+.footer-tagline {
+    max-width: 400px;
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+/* Colonne Liens de Navigation */
+.footer-links h4 {
+    color: var(--text-title);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: var(--accent-orange);
+    transform: translateX(4px); /* Petit effet de glissement dynamique au survol */
+}
+
+/* Ligne de Copyright finale */
+.footer-bottom {
+    background-color: #060608; /* Légèrement encore plus sombre */
+    text-align: center;
+    padding: 24px 0;
+    border-top: 1px solid #141417;
+}
+
+.footer-bottom p {
+    color: #52525b; /* Gris discret */
+    font-size: 0.85rem;
+}
+
+/* Ajustement pour les téléphones */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* Tout passe sur une seule ligne */
+        gap: 32px;
+        text-align: center;
+    }
+    
+    .footer-tagline {
+        margin: 0 auto;
+    }
+    
+    .footer-links a:hover {
+        transform: translateY(-2px); /* Changement de l'animation pour le mobile */
+    }
+}
+
+/* Container de l'aperçu du projet */
+.project-preview {
+    width: 100%;
+    height: 240px;            /* Hauteur confortable pour afficher un rendu vertical */
+    background-color: #121214; /* Fond sombre premium (effet mock-up studio) */
+    display: flex;
+    justify-content: center;   /* Centre l'image horizontalement */
+    align-items: center;       /* Centre l'image verticalement */
+    overflow: hidden;
+    border-bottom: 1px solid #27272a;
+    padding: 12px 0;           /* Donne un léger espace respirable en haut et en bas */
+}
+
+/* Style ajusté pour l'image de capture */
+.screenshot-img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    object-fit: contain;       /* RECOMMANDÉ : Empêche l'image de zoomer ou de se déformer */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.9;
+    /* Optionnel : ajoute une ombre fine à la capture pour simuler un vrai smartphone */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); 
+    border-radius: 4px;
+}
+
+/* Effet dynamique au survol de la carte */
+.project-card:hover .screenshot-img {
+    transform: scale(1.03) translateY(-2px); /* Léger effet de soulèvement très pro */
+    opacity: 1;
+}
+
+/* Badge de confidentialité */
+.confidential-tag {
+    font-size: 0.85rem;
+    color: #a1a1aa; /* Gris neutre élégant */
+    font-weight: 500;
+}
